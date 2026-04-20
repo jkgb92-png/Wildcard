@@ -329,6 +329,7 @@ const spinBtn   = document.getElementById('spin-btn');
  */
 function toggleLobbyUI() {
   const hidden = lobbyUI.classList.toggle('panel-hidden');
+  toggleBtn.setAttribute('aria-expanded', String(!hidden));
   toggleBtn.innerHTML = hidden ? '&#x2630;' : '&#x2715;';
   toggleBtn.setAttribute('aria-label', hidden ? 'Show UI panel' : 'Hide UI panel');
 }
