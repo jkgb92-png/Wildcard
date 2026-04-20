@@ -311,3 +311,48 @@ function animate() {
 }
 
 animate();
+
+
+// ─────────────────────────────────────────────────────────────
+// 7. LOBBY UI
+// ─────────────────────────────────────────────────────────────
+
+const lobbyUI   = document.getElementById('lobby-ui');
+const toggleBtn = document.getElementById('toggle-btn');
+const spinBtn   = document.getElementById('spin-btn');
+
+/**
+ * toggleLobbyUI()
+ *
+ * Shows or hides the #lobby-panel by toggling the `panel-hidden` class
+ * on #lobby-ui. The toggle button label flips between ✕ and ☰.
+ */
+function toggleLobbyUI() {
+  const hidden = lobbyUI.classList.toggle('panel-hidden');
+  toggleBtn.innerHTML = hidden ? '&#x2630;' : '&#x2715;';
+  toggleBtn.setAttribute('aria-label', hidden ? 'Show UI panel' : 'Hide UI panel');
+}
+
+/**
+ * updateReelLabels()
+ *
+ * Reads the current values from the 5 option inputs and logs them.
+ * TODO: pass this array to the Three.js texture builder (buildReelTexture)
+ * once the canvas-texture integration is wired up.
+ *
+ * @returns {string[]} Array of 5 option strings (may be empty strings if blank).
+ */
+function updateReelLabels() {
+  const options = [1, 2, 3, 4, 5].map(
+    (n) => document.getElementById(`option-${n}`).value.trim()
+  );
+  console.log('Reel options:', options);
+  return options;
+}
+
+toggleBtn.addEventListener('click', toggleLobbyUI);
+
+spinBtn.addEventListener('click', () => {
+  updateReelLabels();
+  spinReel();
+});

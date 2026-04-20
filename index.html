@@ -12,6 +12,44 @@
     <div id="ui-overlay">
       <p class="hint">Click anywhere to spin</p>
     </div>
+
+    <!-- Shared Lobby UI Overlay -->
+    <div id="lobby-ui">
+      <div id="lobby-panel">
+        <div id="lobby-header">
+          <h1 class="lobby-title">WILDCARD</h1>
+          <p class="lobby-subtitle">ENTER YOUR 5 OPTIONS</p>
+        </div>
+
+        <form id="lobby-form" autocomplete="off">
+          <div class="input-group">
+            <label class="input-label" for="option-1">01</label>
+            <input class="option-input" id="option-1" type="text" placeholder="Option 1" maxlength="24" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="option-2">02</label>
+            <input class="option-input" id="option-2" type="text" placeholder="Option 2" maxlength="24" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="option-3">03</label>
+            <input class="option-input" id="option-3" type="text" placeholder="Option 3" maxlength="24" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="option-4">04</label>
+            <input class="option-input" id="option-4" type="text" placeholder="Option 4" maxlength="24" />
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="option-5">05</label>
+            <input class="option-input" id="option-5" type="text" placeholder="Option 5" maxlength="24" />
+          </div>
+
+          <button id="spin-btn" type="button">LOCK IN &amp; SPIN</button>
+        </form>
+      </div>
+
+      <button id="toggle-btn" type="button" aria-label="Toggle UI panel">&#x2715;</button>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
